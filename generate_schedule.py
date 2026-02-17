@@ -10,7 +10,7 @@ save_folder = "."
 # 2. DATA (AI: FILL THIS LIST)
 schedule_data = [
     # --- MONDAY (Feb 16) ---
-    {'day': 0, 'start': 9, 'duration': 0.5, 'label': 'Travel', 'type': 'Travel'},
+    {'day': 0, 'start': 9.5, 'duration': 0.5, 'label': 'Travel', 'type': 'Travel'},
     {'day': 0, 'start': 10.0, 'duration': 1.0, 'label': 'Client: WPH', 'type': 'Client'},
     {'day': 0, 'start': 11.0, 'duration': 0.5, 'label': 'Travel', 'type': 'Travel'},
     {'day': 0, 'start': 11.5, 'duration': 0.75, 'label': 'Transition Buffer', 'type': 'Personal'},
