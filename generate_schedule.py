@@ -62,7 +62,7 @@ schedule_data = [
 
 colors = {
     'Fixed': '#EF5350', 'Travel': '#90A4AE', 'Client': '#42A5F5',
-    'DeepWork': '#66BB6A', 'Admin': '#AB47BC', 'Sabbath': '#FFA726', 'Personal': '#8D6E63'
+    'DeepWork': '#66BB6B', 'Admin': '#AB47BC', 'Sabbath': '#FFA726', 'Personal': '#8D6E63'
 }
 
 # 3. RENDER LOGIC
