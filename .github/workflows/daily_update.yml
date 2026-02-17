@@ -7,7 +7,7 @@ on:
     paths:
       - 'generate_schedule.py' # Only run if the script changes
   schedule:
-    - cron: '0 18 * * *' # Runs at 5:00 AM Sydney Time
+    - cron: '0 16 * * *' # Runs at 5:00 AM Sydney Time
   workflow_dispatch:      # Allows manual click
 
 permissions:
