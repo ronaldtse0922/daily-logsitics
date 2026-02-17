@@ -1,0 +1,35 @@
+name: Daily Schedule Generator
+
+on:
+  schedule:
+    # Runs at 18:00 UTC (which is 5:00 AM Sydney Time)
+    - cron: '0 18 * * *'
+  workflow_dispatch: # Allows you to run it manually to test
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Libraries
+        run: pip install matplotlib
+
+      - name: Run Generator
+        run: python generate_schedule.py
+
+      - name: Commit and Push Images
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update daily schedule [skip ci]"
+          file_pattern: "*.png"
