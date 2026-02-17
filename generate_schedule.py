@@ -1,11 +1,9 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
-import textwrap
-import os
-import datetime
+import textwrap, os, datetime
 
-# 1. CLOUD PATH (Critical for GitHub)
-save_folder = "." 
+# FORCE SAVE TO THE FOLDER WHERE THE SCRIPT LIVES
+save_folder = os.path.dirname(os.path.abspath(__file__))
 
 # 2. DATA (AI: FILL THIS LIST)
 schedule_data = [
