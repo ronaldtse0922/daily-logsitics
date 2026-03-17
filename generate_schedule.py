@@ -7,70 +7,82 @@ import datetime
 # 1. CLOUD PATH (Critical for GitHub)
 save_folder = "." 
 
-# 2. DATA (AI: FILL THIS LIST)
+# 2. DATA
 schedule_data = [
     # MONDAY
-    {'day': 0, 'start': 8.0, 'duration': 0.5, 'label': 'Bible Reading', 'type': 'Personal'},
+    {'day': 0, 'start': 8, 'duration': 0.33, 'label': 'Bible Reading', 'type': 'Personal'},
     {'day': 0, 'start': 9.5, 'duration': 0.5, 'label': 'Travel to WPH', 'type': 'Travel'},
-    {'day': 0, 'start': 10.0, 'duration': 1.0, 'label': 'Client WPH', 'type': 'Client'},
-    {'day': 0, 'start': 11.0, 'duration': 0.5, 'label': 'Travel Home', 'type': 'Travel'},
+    {'day': 0, 'start': 10, 'duration': 1, 'label': 'Client WPH', 'type': 'Client'},
+    {'day': 0, 'start': 11, 'duration': 0.5, 'label': 'Travel Home', 'type': 'Travel'},
     {'day': 0, 'start': 11.5, 'duration': 0.75, 'label': 'Transition Buffer', 'type': 'Personal'},
-    {'day': 0, 'start': 12.25, 'duration': 2.0, 'label': 'Deep Work: Generative Translation', 'type': 'DeepWork'},
-    {'day': 0, 'start': 14.75, 'duration': 2.0, 'label': 'Deep Work: Argument Mapping', 'type': 'DeepWork'},
-    {'day': 0, 'start': 16.75, 'duration': 1.25, 'label': 'Billing Admin', 'type': 'Admin'},
-    {'day': 0, 'start': 18.0, 'duration': 1.0, 'label': 'Jacob dinner', 'type': 'Personal'},
-    
+    {'day': 0, 'start': 12.25, 'duration': 0.75, 'label': 'Lunch', 'type': 'Personal'},
+    {'day': 0, 'start': 13, 'duration': 2.5, 'label': 'Deep Work: Gen. Translation', 'type': 'DeepWork'},
+    {'day': 0, 'start': 16, 'duration': 2, 'label': 'Deep Work: Interleaved Syntax', 'type': 'DeepWork'},
+    {'day': 0, 'start': 18, 'duration': 1, 'label': 'Dinner', 'type': 'Personal'},
+    {'day': 0, 'start': 19, 'duration': 3, 'label': 'Sabbath Rest Block 3', 'type': 'Sabbath'},
+
     # TUESDAY
-    {'day': 1, 'start': 7.75, 'duration': 0.58, 'label': 'Bible & Morning', 'type': 'Personal'},
+    {'day': 1, 'start': 8, 'duration': 0.33, 'label': 'Bible Reading', 'type': 'Personal'},
     {'day': 1, 'start': 8.33, 'duration': 0.42, 'label': 'Travel to Burwood', 'type': 'Travel'},
-    {'day': 1, 'start': 8.75, 'duration': 3.25, 'label': 'Class: Romans (Greek)', 'type': 'Fixed'},
+    {'day': 1, 'start': 8.75, 'duration': 3.25, 'label': 'Class: Romans', 'type': 'Fixed'},
+    {'day': 1, 'start': 12, 'duration': 1, 'label': 'Lunch', 'type': 'Personal'},
     {'day': 1, 'start': 14.16, 'duration': 0.58, 'label': 'Travel to Mortdale', 'type': 'Travel'},
     {'day': 1, 'start': 14.75, 'duration': 0.75, 'label': 'Client Mortdale', 'type': 'Client'},
-    {'day': 1, 'start': 15.5, 'duration': 0.5, 'label': 'Travel to Mascot', 'type': 'Travel'},
-    {'day': 1, 'start': 16.0, 'duration': 1.0, 'label': 'Client Mascot', 'type': 'Client'},
-    {'day': 1, 'start': 17.0, 'duration': 0.5, 'label': 'Travel Home', 'type': 'Travel'},
+    {'day': 1, 'start': 15.5, 'duration': 0.5, 'label': 'Travel Mascot', 'type': 'Travel'},
+    {'day': 1, 'start': 16, 'duration': 1, 'label': 'Client Mascot', 'type': 'Client'},
+    {'day': 1, 'start': 17, 'duration': 0.5, 'label': 'Travel Home', 'type': 'Travel'},
     {'day': 1, 'start': 17.5, 'duration': 0.75, 'label': 'Transition Buffer', 'type': 'Personal'},
-    {'day': 1, 'start': 18.25, 'duration': 2.0, 'label': 'Deep Work: Mixed Problem Solving', 'type': 'DeepWork'},
-    
+    {'day': 1, 'start': 18.25, 'duration': 0.75, 'label': 'Dinner', 'type': 'Personal'},
+    {'day': 1, 'start': 19, 'duration': 2, 'label': 'Deep Work: Visual Mnemonic', 'type': 'DeepWork'},
+
     # WEDNESDAY
-    {'day': 2, 'start': 8.0, 'duration': 0.5, 'label': 'Bible Reading', 'type': 'Personal'},
-    {'day': 2, 'start': 8.5, 'duration': 2.0, 'label': 'Deep Work: Concept Mapping', 'type': 'DeepWork'},
-    {'day': 2, 'start': 10.75, 'duration': 2.0, 'label': 'Deep Work: Visual Mnemonic Creation', 'type': 'DeepWork'},
-    {'day': 2, 'start': 17.0, 'duration': 1.75, 'label': 'Billing Admin', 'type': 'Admin'},
-    {'day': 2, 'start': 19.0, 'duration': 3.0, 'label': 'Sabbath Rest', 'type': 'Sabbath'},
-    
+    {'day': 2, 'start': 8, 'duration': 0.33, 'label': 'Bible Reading', 'type': 'Personal'},
+    {'day': 2, 'start': 8.5, 'duration': 2, 'label': 'Deep Work: Blank Sheet Recall', 'type': 'DeepWork'},
+    {'day': 2, 'start': 11, 'duration': 2, 'label': 'Deep Work: Delayed Vocab', 'type': 'DeepWork'},
+    {'day': 2, 'start': 13, 'duration': 1, 'label': 'Lunch', 'type': 'Personal'},
+    {'day': 2, 'start': 14, 'duration': 2.5, 'label': 'Billing Admin', 'type': 'Admin'},
+    {'day': 2, 'start': 18, 'duration': 1, 'label': 'Dinner', 'type': 'Personal'},
+
     # THURSDAY
-    {'day': 3, 'start': 8.0, 'duration': 0.5, 'label': 'Bible Reading', 'type': 'Personal'},
-    {'day': 3, 'start': 9.33, 'duration': 0.42, 'label': 'Travel to Burwood', 'type': 'Travel'},
-    {'day': 3, 'start': 9.75, 'duration': 3.25, 'label': 'Class: The Pentateuch', 'type': 'Fixed'},
-    {'day': 3, 'start': 13.0, 'duration': 1.0, 'label': 'Dan lunch meetup', 'type': 'Fixed'},
-    {'day': 3, 'start': 14.0, 'duration': 0.42, 'label': 'Travel Home', 'type': 'Travel'},
+    {'day': 3, 'start': 8, 'duration': 0.33, 'label': 'Bible Reading', 'type': 'Personal'},
+    {'day': 3, 'start': 9.33, 'duration': 0.42, 'label': 'Travel Burwood', 'type': 'Travel'},
+    {'day': 3, 'start': 9.75, 'duration': 3.25, 'label': 'Class: Pentateuch', 'type': 'Fixed'},
+    {'day': 3, 'start': 10, 'duration': 1, 'label': 'Drop Nexguard for kitty', 'type': 'Personal'}, 
+    {'day': 3, 'start': 13, 'duration': 1, 'label': 'Pastor Meetup', 'type': 'Fixed'},
+    {'day': 3, 'start': 14, 'duration': 0.42, 'label': 'Travel Home', 'type': 'Travel'},
     {'day': 3, 'start': 14.42, 'duration': 0.75, 'label': 'Transition Buffer', 'type': 'Personal'},
-    {'day': 3, 'start': 15.16, 'duration': 2.0, 'label': 'Deep Work: Syntax Diagramming', 'type': 'DeepWork'},
-    
+    {'day': 3, 'start': 15.5, 'duration': 2, 'label': 'Deep Work: Pre-Test', 'type': 'DeepWork'},
+    {'day': 3, 'start': 18, 'duration': 1, 'label': 'Dinner', 'type': 'Personal'},
+    {'day': 3, 'start': 19, 'duration': 2, 'label': 'Deep Work: Context Review', 'type': 'DeepWork'},
+
     # FRIDAY
-    {'day': 4, 'start': 8.0, 'duration': 0.5, 'label': 'Bible Reading', 'type': 'Personal'},
+    {'day': 4, 'start': 8, 'duration': 0.33, 'label': 'Bible Reading', 'type': 'Personal'},
     {'day': 4, 'start': 9.5, 'duration': 0.5, 'label': 'Travel to WPH', 'type': 'Travel'},
-    {'day': 4, 'start': 10.0, 'duration': 1.0, 'label': 'Client WPH', 'type': 'Client'},
-    {'day': 4, 'start': 11.0, 'duration': 0.5, 'label': 'Travel Home', 'type': 'Travel'},
-    {'day': 4, 'start': 11.25, 'duration': 1.0, 'label': 'Anny cleaning (confirmed)', 'type': 'Personal'},
-    {'day': 4, 'start': 11.5, 'duration': 3.0, 'label': 'Sabbath Rest (Wife Time)', 'type': 'Sabbath'},
-    {'day': 4, 'start': 14.5, 'duration': 2.0, 'label': 'Deep Work: Elaborative Interrogation', 'type': 'DeepWork'},
-    {'day': 4, 'start': 16.5, 'duration': 0.75, 'label': 'Transition Buffer', 'type': 'Personal'},
-    {'day': 4, 'start': 17.25, 'duration': 2.0, 'label': 'Deep Work: Pre-Test & Parsing', 'type': 'DeepWork'},
-    
+    {'day': 4, 'start': 10, 'duration': 1, 'label': 'Client WPH', 'type': 'Client'},
+    {'day': 4, 'start': 11, 'duration': 0.5, 'label': 'Travel', 'type': 'Travel'},
+    {'day': 4, 'start': 11.5, 'duration': 3, 'label': 'Sabbath Rest Block 1 (Wife)', 'type': 'Sabbath'},
+    {'day': 4, 'start': 14.5, 'duration': 0.5, 'label': 'Travel Home', 'type': 'Travel'},
+    {'day': 4, 'start': 15, 'duration': 0.75, 'label': 'Transition Buffer', 'type': 'Personal'},
+    {'day': 4, 'start': 15.75, 'duration': 2, 'label': 'Deep Work: Cumulative Review', 'type': 'DeepWork'},
+    {'day': 4, 'start': 17.75, 'duration': 0.75, 'label': 'Dinner', 'type': 'Personal'},
+    {'day': 4, 'start': 18.5, 'duration': 3, 'label': 'CMT Meeting', 'type': 'Fixed'},
+
     # SATURDAY
-    {'day': 5, 'start': 8.0, 'duration': 4.0, 'label': 'Sabbath Rest', 'type': 'Sabbath'},
-    {'day': 5, 'start': 12.0, 'duration': 0.5, 'label': 'Bible Reading', 'type': 'Personal'},
-    {'day': 5, 'start': 13.0, 'duration': 2.0, 'label': 'Deep Work: Varied Context Review', 'type': 'DeepWork'},
-    {'day': 5, 'start': 15.0, 'duration': 0.5, 'label': 'Transition Buffer', 'type': 'Personal'},
-    {'day': 5, 'start': 15.5, 'duration': 2.0, 'label': 'Deep Work: Discrimination Training', 'type': 'DeepWork'},
-    
+    {'day': 5, 'start': 8, 'duration': 0.33, 'label': 'Bible Reading', 'type': 'Personal'},
+    {'day': 5, 'start': 10, 'duration': 1, 'label': 'ITB NON MEETING', 'type': 'Fixed'},
+    {'day': 5, 'start': 11, 'duration': 3, 'label': 'Sabbath Rest Block 2', 'type': 'Sabbath'},
+    {'day': 5, 'start': 14, 'duration': 1, 'label': 'Lunch', 'type': 'Personal'},
+    {'day': 5, 'start': 15, 'duration': 2, 'label': 'Deep Work: Concept Mapping', 'type': 'DeepWork'},
+    {'day': 5, 'start': 17, 'duration': 2, 'label': 'Deep Work: Syntax Diagramming', 'type': 'DeepWork'},
+    {'day': 5, 'start': 19, 'duration': 1, 'label': 'Dinner', 'type': 'Personal'},
+
     # SUNDAY
-    {'day': 6, 'start': 8.5, 'duration': 0.5, 'label': 'Travel to Church', 'type': 'Travel'},
-    {'day': 6, 'start': 9.0, 'duration': 7.0, 'label': 'Church Service & Serving', 'type': 'Fixed'},
-    {'day': 6, 'start': 16.0, 'duration': 0.5, 'label': 'Travel Home', 'type': 'Travel'},
-]
+    {'day': 6, 'start': 8, 'duration': 0.33, 'label': 'Bible Reading', 'type': 'Personal'},
+    {'day': 6, 'start': 8.33, 'duration': 0.67, 'label': 'Travel Church', 'type': 'Travel'},
+    {'day': 6, 'start': 9, 'duration': 7, 'label': 'Church Serving', 'type': 'Fixed'},
+    {'day': 6, 'start': 16, 'duration': 1, 'label': 'Travel Home', 'type': 'Travel'},
+    {'day': 6, 'start': 18, 'duration': 1, 'label': 'Dinner', 'type': 'Personal'},
+] 
 
 colors = {
     'Fixed': '#EF5350', 'Travel': '#90A4AE', 'Client': '#42A5F5',
